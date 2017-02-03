@@ -7,16 +7,15 @@
         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd">
 
 	
-	<!-- import from another xml file -->
+	<!-- imports cubs from another xml file -->
 	<import resource="second_config.xml" />
 	
-	<!-- import all beans declared in AppConfig. notice we added context namespace -->
+	<!-- imports redSox declared in AppConfig. notice we added context namespace -->
 	<context:annotation-config />
 	<bean  class="config.AppConfig" />
 	
-	<!-- import @Component beans discovered by component scan -->
+	<!-- imports cows @Component bean discovered by component scan -->
 	<context:component-scan base-package="beans" />
-
 	
 	<bean id="game" class="beans.CricketGame">
 		<property name="first" ref="redSox" />
